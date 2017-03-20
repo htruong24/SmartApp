@@ -1,0 +1,120 @@
+<ion-view view-title="Trang chủ">
+  <ion-content class="has-header home-page">
+    <div class="assets">
+      <h2>Assets</h2>
+      <div class="group-assests row">
+        <div ui-sref="app.assets.list" class="col col-25">
+          <div set-same-height="set-same-height" class="item-contain">
+            <div class="item-image">
+              <image ng-src="images/search-icon.png" class="image-size"></image>
+            </div>
+            <div class="item-decription">Search</div>
+          </div>
+        </div>
+        <div ui-sref="app.assets.recent" class="col col-25">
+          <div set-same-height="set-same-height" class="item-contain">
+            <div class="item-image">
+              <image ng-src="images/recent-assets-icon.png" class="image-size"></image>
+            </div>
+            <div class="item-decription">Recent Assets</div>
+          </div>
+        </div>
+        <div ui-sref="app.assets.myAssets" class="col col-25">
+          <div set-same-height="set-same-height" class="item-contain">
+            <div class="item-image">
+              <image ng-src="images/my-assets-icon.png" class="image-size"></image>
+            </div>
+            <div class="item-decription">My Assets</div>
+          </div>
+        </div>
+        <div ui-sref="app.hierarchy" class="col col-25">
+          <div set-same-height="set-same-height" class="item-contain">
+            <div class="item-image">
+              <image ng-src="images/hierarchy-icon.png" class="image-size"></image>
+            </div>
+            <div class="item-decription">Hierarchy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="workorder">
+      <h2>Work Orders</h2>
+      <div class="card-group-wo row">
+        <div ui-sref="app.workOrder.workOrderList" class="col col-25">
+          <div set-same-height="set-same-height" class="item-contain">
+            <div class="item-image">
+              <image ng-src="images/search-icon.png" class="image-size"></image>
+            </div>
+            <div class="item-decription">Search</div>
+          </div>
+        </div>
+        <div ui-sref="app.workOrder.recentWorkOrder" class="col col-25">
+          <div set-same-height="set-same-height" class="item-contain">
+            <div class="item-image">
+              <image ng-src="images/recent-work-orders-icon.png" class="image-size"></image>
+            </div>
+            <div class="item-decription">Recent Work Orders</div>
+          </div>
+        </div>
+        <div ui-sref="app.workOrder.myWorkOrder" class="col col-25">
+          <div set-same-height="set-same-height" class="item-contain">
+            <div class="item-image">
+              <image ng-src="images/my-work-orders-icon.png" class="image-size"></image>
+            </div>
+            <div class="item-decription">My Work Orders</div>
+          </div>
+        </div>
+        <div ui-sref="app.workOrder.workOrderDepartment" class="col col-25">
+          <div set-same-height="set-same-height" class="item-contain">
+            <div class="item-image">
+              <image ng-src="images/my-department-icon.png" class="image-size"></image>
+            </div>
+            <div class="item-decription">My Department</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="observations">
+      <h2>Observations</h2>
+      <div class="group-assests row">
+        <div ui-sref="app.Observations.observationsList" class="col col-25">
+          <div set-same-height="set-same-height" class="item-contain">
+            <div class="item-image">
+              <image ng-src="images/search-icon.png" class="image-size"></image>
+            </div>
+            <div class="item-decription">Search</div>
+          </div>
+        </div>
+        <div ui-sref="app.Observations.recentObservations" class="col col-25">
+          <div set-same-height="set-same-height" class="item-contain">
+            <div class="item-image">
+              <image ng-src="images/recent-observations-icon.png" class="image-size"></image>
+            </div>
+            <div class="item-decription">Recent Observation</div>
+          </div>
+        </div>
+        <div ui-sref="app.Observations.myObservations" class="col col-25">
+          <div set-same-height="set-same-height" class="item-contain">
+            <div class="item-image">
+              <image ng-src="images/my-observations-icon.png" class="image-size"></image>
+            </div>
+            <div class="item-decription">My Observation</div>
+          </div>
+        </div>
+        <div ng-click="newObservation()" class="col col-25">
+          <div set-same-height="set-same-height" class="item-contain">
+            <div class="item-image">
+              <image ng-src="images/new-observations-icon.png" class="image-size"></image>
+            </div>
+            <div class="item-decription">New Observation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer-bar class="bar bar-positive">
+    <div class="button-bar">
+      <button ng-click="syncMyData()" class="button button-positive">Get My Data</button>
+    </div>
+  </ion-footer-bar>
+</ion-view>
