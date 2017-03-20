@@ -70,7 +70,6 @@ angular.module('starter.controllers', [])
       title: "hello",
       number: $stateParams.playlistId
    };
-
 })
 
 .controller('SearchCtrl', function($scope, $ionicPopover, $ionicLoading, $ionicActionSheet) {
@@ -147,4 +146,70 @@ angular.module('starter.controllers', [])
       });
     };
 
-});
+})
+
+//Todos
+.controller('TodosCtrl', function($scope) {
+    $scope.playlists = [
+    { title: 'Reggae', id: 1 },
+    { title: 'Chill', id: 2 },
+    { title: 'Dubstep', id: 3 },
+    { title: 'Indie', id: 4 },
+    { title: 'Rap', id: 5 },
+    { title: 'Cowbell', id: 6 }
+  ];
+  $scope.scrollTop = function() {
+    $ionicScrollDelegate.scrollTop();
+  };
+  $scope.items = [1,2,3];
+  $scope.doRefresh = function() {
+   console.log("refresh");
+   $scope.$broadcast('scroll.refreshComplete');
+  };
+})
+.controller('ProjectsCtrl', function($scope, $ionicModal, Projects) {
+     // Load or initialize projects
+    $scope.projects = Projects.all();
+
+    // Called to create a new project
+    $scope.newProject = function() {
+      var projectTitle = prompt('Project name');
+      if(projectTitle) {
+        createProject(projectTitle);
+      }
+    };
+
+    // Create project modal
+    $ionicModal.fromTemplateUrl('template/modal/new-project.html', function(modal) {
+      $scope.projectModal = modal;
+    }, {
+      scope: $scope
+    });
+
+    var createProject = function(projectTitle) {
+        var newProject = Projects.newProject(projectTitle);
+        $scope.projects.push(newProject);
+        Projects.save($scope.projects);
+        $scope.selectProject(newProject, $scope.projects.length-1);
+    }
+
+    $scope.createProject = function(project) {
+      createProject(project);
+      Projects.save($scope.projects);
+    };
+
+    $scope.newProject = function() {
+      $scope.projectModal.show();
+    };
+
+    $scope.closeNewProject = function() {
+      $scope.projectModal.hide();
+    }
+
+    $scope.toggleProjects = function() {
+      $ionicSideMenuDelegate.toggleLeft();
+    };
+})
+
+
+

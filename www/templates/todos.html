@@ -1,0 +1,20 @@
+<ion-view view-title="Todos">
+    <ion-nav-buttons side="right">
+        <!--<button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+            
+        </button>-->
+          <button class="button button-icon button-clear ion-plus" ng-click="newTask()"> New task </button>
+      </ion-nav-buttons>
+  <ion-content>
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+    <!-- New Task button-->
+    <button class="button button-icon" ng-click="newTask()">
+    <!-- our list and list items -->
+    <ion-list>
+        <ion-item ng-repeat="task in tasks">
+            {{task.title}}
+        </ion-item>
+    </ion-list>
+    <!--<button ng-click="scrollTop()">Scroll to Top!</button>-->
+  </ion-content>
+</ion-view>

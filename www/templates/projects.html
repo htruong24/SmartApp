@@ -1,0 +1,17 @@
+<ion-view view-title="Projects">
+   <ion-nav-buttons side="right">
+       <button class="button button-icon ion-plus" ng-click="newProject()"></button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+    <!-- New Task button-->
+    <button class="button button-icon" ng-click="newTask()">
+    <!-- our list and list items -->
+    <ion-list>
+        <ion-item ng-repeat="project in projects" ng-click="selectProject(project, $index)" ng-class="{active: activeProject == project}">
+          {{project.title}}
+        </ion-item>
+    </ion-list>
+    <!--<button ng-click="scrollTop()">Scroll to Top!</button>-->
+  </ion-content>
+</ion-view>
