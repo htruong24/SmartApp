@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.services', [])
 
 .factory('Projects', function() {
   return {
