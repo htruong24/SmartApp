@@ -43,6 +43,22 @@ angular.module('starter.controllers', [])
   };
 })
 
+
+/****  Login  ****/
+.controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
+    $scope.data = {};
+    $scope.login = function() {
+        LoginService.login($scope.data.username, $scope.data.password).success(function(data) {
+            $state.go('app.home');
+        }).error(function(data) {
+            var alertPopup = $ionicPopup.alert({
+                title: 'Đăng nhập thất bại!',
+                template: 'Xin kiểm tra lại tài khoản!'
+            });
+        });
+    }
+})
+
 .controller('PlaylistsCtrl', function($scope, $ionicScrollDelegate) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
