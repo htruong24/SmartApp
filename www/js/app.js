@@ -4,9 +4,9 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('smartApp', ['ionic', 'smartApp.controllers', 'smartApp.services'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $ionicPopup) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,6 +20,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       StatusBar.styleDefault();
     }
   });
+   // Disable BACK button on home
+  $ionicPlatform.registerBackButtonAction(function(event) {
+      alert("Back");
+  }, 100);
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
