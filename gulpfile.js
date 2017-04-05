@@ -11,7 +11,7 @@ var paths = {
   scripts: [
     './www/js/app.js',
     './www/js/services/*.js',
-    './www/js/**/*.js'
+    './www/js/controllers/**/*.js'
   ],
   sass: ['./scss/**/*.scss']
 };
@@ -39,6 +39,7 @@ gulp.task('scripts', function () {
 
 gulp.task('watch', ['sass'], function() {
   gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.scripts, ['scripts']);
 });
 
 gulp.task('install', ['git-check'], function() {
